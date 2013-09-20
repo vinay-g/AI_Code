@@ -1,0 +1,1139 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
+    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY protege "http://protege.stanford.edu/plugins/owl/protege#" >
+    <!ENTITY xsp "http://www.owl-ontologies.com/2005/08/07/xsp.owl#" >
+    <!ENTITY untitled-ontology-3 "http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#"
+     xml:base="http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3"
+     xmlns:untitled-ontology-3="http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about=""/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="#has_Manager"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Architect_Of -->
+
+    <owl:ObjectProperty rdf:about="#Architect_Of"/>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#CEO_Of -->
+
+    <owl:ObjectProperty rdf:about="#CEO_Of">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:domain rdf:resource="#CEO"/>
+        <owl:inverseOf rdf:resource="#Has_CEO"/>
+        <rdfs:subPropertyOf rdf:resource="#Manager_Of"/>
+        <rdfs:range rdf:resource="#President"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Developer_Of -->
+
+    <owl:ObjectProperty rdf:about="#Developer_Of"/>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Director_Of -->
+
+    <owl:ObjectProperty rdf:about="#Director_Of">
+        <rdfs:range rdf:resource="#Architect"/>
+        <rdfs:domain rdf:resource="#Director"/>
+        <rdfs:range rdf:resource="#HR"/>
+        <owl:inverseOf rdf:resource="#Has_Director"/>
+        <rdfs:subPropertyOf rdf:resource="#Manager_Of"/>
+        <rdfs:range rdf:resource="#Project_Manager"/>
+        <rdfs:range rdf:resource="#Resourse_Manager"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#HR_Of -->
+
+    <owl:ObjectProperty rdf:about="#HR_Of">
+        <owl:inverseOf rdf:resource="#Has_HR"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Has_Architect -->
+
+    <owl:ObjectProperty rdf:about="#Has_Architect"/>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Has_CEO -->
+
+    <owl:ObjectProperty rdf:about="#Has_CEO">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:range rdf:resource="#CEO"/>
+        <rdfs:subPropertyOf rdf:resource="#Has_Manager"/>
+        <rdfs:domain rdf:resource="#President"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Has_Developer -->
+
+    <owl:ObjectProperty rdf:about="#Has_Developer"/>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Has_Director -->
+
+    <owl:ObjectProperty rdf:about="#Has_Director">
+        <rdfs:domain rdf:resource="#Architect"/>
+        <rdfs:range rdf:resource="#Director"/>
+        <rdfs:domain rdf:resource="#HR"/>
+        <rdfs:subPropertyOf rdf:resource="#Has_Manager"/>
+        <rdfs:domain rdf:resource="#Project_Manager"/>
+        <rdfs:domain rdf:resource="#Resourse_Manager"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Has_HR -->
+
+    <owl:ObjectProperty rdf:about="#Has_HR"/>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Has_Manager -->
+
+    <owl:ObjectProperty rdf:about="#Has_Manager">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <owl:inverseOf rdf:resource="#Manager_Of"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#Has_Manager"/>
+                <owl:someValuesFrom rdf:resource="#Employee"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#Has_Manager"/>
+                <owl:someValuesFrom rdf:resource="#Employee"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Has_President -->
+
+    <owl:ObjectProperty rdf:about="#Has_President">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:subPropertyOf rdf:resource="#Has_Manager"/>
+        <rdfs:range rdf:resource="#President"/>
+        <rdfs:domain rdf:resource="#Vice_President"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Has_Project_Manager -->
+
+    <owl:ObjectProperty rdf:about="#Has_Project_Manager"/>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Has_Resource_Manager -->
+
+    <owl:ObjectProperty rdf:about="#Has_Resource_Manager">
+        <rdfs:subPropertyOf rdf:resource="#Has_Manager"/>
+        <rdfs:range rdf:resource="#Resourse_Manager"/>
+        <rdfs:domain rdf:resource="#Team_Lead"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Has_Systems_Engineer -->
+
+    <owl:ObjectProperty rdf:about="#Has_Systems_Engineer"/>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Has_Team_Lead -->
+
+    <owl:ObjectProperty rdf:about="#Has_Team_Lead">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="#Developer"/>
+        <rdfs:subPropertyOf rdf:resource="#Has_Manager"/>
+        <rdfs:domain rdf:resource="#Systems_Engineer"/>
+        <rdfs:range rdf:resource="#Team_Lead"/>
+        <owl:inverseOf rdf:resource="#Team_Lead_Of"/>
+        <rdfs:domain rdf:resource="#Tester"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Has_VicePresident -->
+
+    <owl:ObjectProperty rdf:about="#Has_VicePresident">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:domain rdf:resource="#Director"/>
+        <rdfs:subPropertyOf rdf:resource="#Has_Manager"/>
+        <owl:inverseOf rdf:resource="#VicePresident_Of"/>
+        <rdfs:range rdf:resource="#Vice_President"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Manager_Of -->
+
+    <owl:ObjectProperty rdf:about="#Manager_Of">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#Manager_Of"/>
+                <owl:someValuesFrom rdf:resource="#Employee"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#Manager_Of"/>
+                <owl:someValuesFrom rdf:resource="#Employee"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#President_Of -->
+
+    <owl:ObjectProperty rdf:about="#President_Of">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <owl:inverseOf rdf:resource="#Has_President"/>
+        <rdfs:subPropertyOf rdf:resource="#Manager_Of"/>
+        <rdfs:domain rdf:resource="#President"/>
+        <rdfs:range rdf:resource="#Vice_President"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Project_Manager_Of -->
+
+    <owl:ObjectProperty rdf:about="#Project_Manager_Of"/>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Resource_Manager_Of -->
+
+    <owl:ObjectProperty rdf:about="#Resource_Manager_Of">
+        <owl:inverseOf rdf:resource="#Has_Resource_Manager"/>
+        <rdfs:subPropertyOf rdf:resource="#Manager_Of"/>
+        <rdfs:domain rdf:resource="#Resourse_Manager"/>
+        <rdfs:range rdf:resource="#Team_Lead"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#System_Engineer_Of -->
+
+    <owl:ObjectProperty rdf:about="#System_Engineer_Of"/>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Team_Lead_Of -->
+
+    <owl:ObjectProperty rdf:about="#Team_Lead_Of">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="#Developer"/>
+        <rdfs:subPropertyOf rdf:resource="#Manager_Of"/>
+        <rdfs:range rdf:resource="#Systems_Engineer"/>
+        <rdfs:domain rdf:resource="#Team_Lead"/>
+        <rdfs:range rdf:resource="#Tester"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#VicePresident_Of -->
+
+    <owl:ObjectProperty rdf:about="#VicePresident_Of">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:range rdf:resource="#Director"/>
+        <rdfs:subPropertyOf rdf:resource="#Manager_Of"/>
+        <rdfs:domain rdf:resource="#Vice_President"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#department_has_employee -->
+
+    <owl:ObjectProperty rdf:about="#department_has_employee">
+        <rdfs:range rdf:resource="#Architect"/>
+        <rdfs:domain rdf:resource="#Department"/>
+        <rdfs:range rdf:resource="#Developer"/>
+        <rdfs:range rdf:resource="#Project_Manager"/>
+        <rdfs:range rdf:resource="#Resourse_Manager"/>
+        <rdfs:range rdf:resource="#Systems_Engineer"/>
+        <rdfs:range rdf:resource="#Team_Lead"/>
+        <rdfs:range rdf:resource="#Tester"/>
+        <owl:inverseOf rdf:resource="#works_for_department"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#project_has_employee -->
+
+    <owl:ObjectProperty rdf:about="#project_has_employee">
+        <rdfs:range rdf:resource="#Architect"/>
+        <rdfs:range rdf:resource="#Developer"/>
+        <rdfs:domain rdf:resource="#Project"/>
+        <rdfs:range rdf:resource="#Project_Manager"/>
+        <rdfs:range rdf:resource="#Resourse_Manager"/>
+        <rdfs:range rdf:resource="#Systems_Engineer"/>
+        <rdfs:range rdf:resource="#Team_Lead"/>
+        <rdfs:range rdf:resource="#Tester"/>
+        <owl:inverseOf rdf:resource="#works_for_project"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#works_for_department -->
+
+    <owl:ObjectProperty rdf:about="#works_for_department">
+        <rdfs:domain rdf:resource="#Architect"/>
+        <rdfs:domain rdf:resource="#Developer"/>
+        <rdfs:domain rdf:resource="#Project_Manager"/>
+        <rdfs:domain rdf:resource="#Resourse_Manager"/>
+        <rdfs:domain rdf:resource="#Systems_Engineer"/>
+        <rdfs:domain rdf:resource="#Team_Lead"/>
+        <rdfs:domain rdf:resource="#Tester"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#works_for_project -->
+
+    <owl:ObjectProperty rdf:about="#works_for_project">
+        <rdfs:domain rdf:resource="#Architect"/>
+        <rdfs:domain rdf:resource="#Developer"/>
+        <rdfs:range rdf:resource="#Project"/>
+        <rdfs:domain rdf:resource="#Project_Manager"/>
+        <rdfs:domain rdf:resource="#Resourse_Manager"/>
+        <rdfs:domain rdf:resource="#Systems_Engineer"/>
+        <rdfs:domain rdf:resource="#Team_Lead"/>
+        <rdfs:domain rdf:resource="#Tester"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Dept_Name -->
+
+    <owl:DatatypeProperty rdf:about="#Dept_Name">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="#Department"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Emp_ID -->
+
+    <owl:DatatypeProperty rdf:about="#Emp_ID">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Architect"/>
+                    <rdf:Description rdf:about="#CEO"/>
+                    <rdf:Description rdf:about="#Developer"/>
+                    <rdf:Description rdf:about="#Director"/>
+                    <rdf:Description rdf:about="#HR"/>
+                    <rdf:Description rdf:about="#President"/>
+                    <rdf:Description rdf:about="#Project_Manager"/>
+                    <rdf:Description rdf:about="#Resourse_Manager"/>
+                    <rdf:Description rdf:about="#Systems_Engineer"/>
+                    <rdf:Description rdf:about="#Team_Lead"/>
+                    <rdf:Description rdf:about="#Tester"/>
+                    <rdf:Description rdf:about="#Vice_President"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Emp_Name -->
+
+    <owl:DatatypeProperty rdf:about="#Emp_Name">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="#Developer"/>
+        <rdfs:range rdf:resource="&xsd;Name"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Project_ID -->
+
+    <owl:DatatypeProperty rdf:about="#Project_ID">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="#Project"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Project_Name -->
+
+    <owl:DatatypeProperty rdf:about="#Project_Name">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="#Project"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Architect -->
+
+    <owl:Class rdf:about="#Architect">
+        <rdfs:subClassOf rdf:resource="#Employee"/>
+        <owl:disjointWith rdf:resource="#CEO"/>
+        <owl:disjointWith rdf:resource="#Developer"/>
+        <owl:disjointWith rdf:resource="#Director"/>
+        <owl:disjointWith rdf:resource="#HR"/>
+        <owl:disjointWith rdf:resource="#President"/>
+        <owl:disjointWith rdf:resource="#Project_Manager"/>
+        <owl:disjointWith rdf:resource="#Resourse_Manager"/>
+        <owl:disjointWith rdf:resource="#Systems_Engineer"/>
+        <owl:disjointWith rdf:resource="#Team_Lead"/>
+        <owl:disjointWith rdf:resource="#Tester"/>
+        <owl:disjointWith rdf:resource="#Vice_President"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#CEO -->
+
+    <owl:Class rdf:about="#CEO">
+        <rdfs:subClassOf rdf:resource="#Employee"/>
+        <owl:disjointWith rdf:resource="#Developer"/>
+        <owl:disjointWith rdf:resource="#Director"/>
+        <owl:disjointWith rdf:resource="#HR"/>
+        <owl:disjointWith rdf:resource="#President"/>
+        <owl:disjointWith rdf:resource="#Project_Manager"/>
+        <owl:disjointWith rdf:resource="#Resourse_Manager"/>
+        <owl:disjointWith rdf:resource="#Systems_Engineer"/>
+        <owl:disjointWith rdf:resource="#Team_Lead"/>
+        <owl:disjointWith rdf:resource="#Tester"/>
+        <owl:disjointWith rdf:resource="#Vice_President"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Department -->
+
+    <owl:Class rdf:about="#Department">
+        <owl:disjointWith rdf:resource="#Employee"/>
+        <owl:disjointWith rdf:resource="#Project"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Developer -->
+
+    <owl:Class rdf:about="#Developer">
+        <rdfs:subClassOf rdf:resource="#Employee"/>
+        <owl:disjointWith rdf:resource="#Director"/>
+        <owl:disjointWith rdf:resource="#HR"/>
+        <owl:disjointWith rdf:resource="#President"/>
+        <owl:disjointWith rdf:resource="#Project_Manager"/>
+        <owl:disjointWith rdf:resource="#Resourse_Manager"/>
+        <owl:disjointWith rdf:resource="#Systems_Engineer"/>
+        <owl:disjointWith rdf:resource="#Team_Lead"/>
+        <owl:disjointWith rdf:resource="#Tester"/>
+        <owl:disjointWith rdf:resource="#Vice_President"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Director -->
+
+    <owl:Class rdf:about="#Director">
+        <rdfs:subClassOf rdf:resource="#Employee"/>
+        <owl:disjointWith rdf:resource="#HR"/>
+        <owl:disjointWith rdf:resource="#President"/>
+        <owl:disjointWith rdf:resource="#Project_Manager"/>
+        <owl:disjointWith rdf:resource="#Resourse_Manager"/>
+        <owl:disjointWith rdf:resource="#Systems_Engineer"/>
+        <owl:disjointWith rdf:resource="#Team_Lead"/>
+        <owl:disjointWith rdf:resource="#Tester"/>
+        <owl:disjointWith rdf:resource="#Vice_President"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Employee -->
+
+    <owl:Class rdf:about="#Employee">
+        <owl:disjointWith rdf:resource="#Project"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#External -->
+
+    <owl:Class rdf:about="#External">
+        <rdfs:subClassOf rdf:resource="#Project"/>
+        <owl:disjointWith rdf:resource="#Internal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#HR -->
+
+    <owl:Class rdf:about="#HR">
+        <rdfs:subClassOf rdf:resource="#Employee"/>
+        <owl:disjointWith rdf:resource="#President"/>
+        <owl:disjointWith rdf:resource="#Project_Manager"/>
+        <owl:disjointWith rdf:resource="#Resourse_Manager"/>
+        <owl:disjointWith rdf:resource="#Systems_Engineer"/>
+        <owl:disjointWith rdf:resource="#Team_Lead"/>
+        <owl:disjointWith rdf:resource="#Tester"/>
+        <owl:disjointWith rdf:resource="#Vice_President"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Internal -->
+
+    <owl:Class rdf:about="#Internal">
+        <rdfs:subClassOf rdf:resource="#Project"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Non_Technical -->
+
+    <owl:Class rdf:about="#Non_Technical">
+        <rdfs:subClassOf rdf:resource="#Project"/>
+        <owl:disjointWith rdf:resource="#Technical"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#President -->
+
+    <owl:Class rdf:about="#President">
+        <rdfs:subClassOf rdf:resource="#Employee"/>
+        <owl:disjointWith rdf:resource="#Project_Manager"/>
+        <owl:disjointWith rdf:resource="#Resourse_Manager"/>
+        <owl:disjointWith rdf:resource="#Systems_Engineer"/>
+        <owl:disjointWith rdf:resource="#Team_Lead"/>
+        <owl:disjointWith rdf:resource="#Tester"/>
+        <owl:disjointWith rdf:resource="#Vice_President"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Project -->
+
+    <owl:Class rdf:about="#Project"/>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Project_Manager -->
+
+    <owl:Class rdf:about="#Project_Manager">
+        <rdfs:subClassOf rdf:resource="#Employee"/>
+        <owl:disjointWith rdf:resource="#Resourse_Manager"/>
+        <owl:disjointWith rdf:resource="#Systems_Engineer"/>
+        <owl:disjointWith rdf:resource="#Team_Lead"/>
+        <owl:disjointWith rdf:resource="#Tester"/>
+        <owl:disjointWith rdf:resource="#Vice_President"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Resourse_Manager -->
+
+    <owl:Class rdf:about="#Resourse_Manager">
+        <rdfs:subClassOf rdf:resource="#Employee"/>
+        <owl:disjointWith rdf:resource="#Systems_Engineer"/>
+        <owl:disjointWith rdf:resource="#Team_Lead"/>
+        <owl:disjointWith rdf:resource="#Tester"/>
+        <owl:disjointWith rdf:resource="#Vice_President"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Systems_Engineer -->
+
+    <owl:Class rdf:about="#Systems_Engineer">
+        <rdfs:subClassOf rdf:resource="#Employee"/>
+        <owl:disjointWith rdf:resource="#Team_Lead"/>
+        <owl:disjointWith rdf:resource="#Tester"/>
+        <owl:disjointWith rdf:resource="#Vice_President"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Team_Lead -->
+
+    <owl:Class rdf:about="#Team_Lead">
+        <rdfs:subClassOf rdf:resource="#Employee"/>
+        <owl:disjointWith rdf:resource="#Tester"/>
+        <owl:disjointWith rdf:resource="#Vice_President"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Technical -->
+
+    <owl:Class rdf:about="#Technical">
+        <rdfs:subClassOf rdf:resource="#Project"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Tester -->
+
+    <owl:Class rdf:about="#Tester">
+        <rdfs:subClassOf rdf:resource="#Employee"/>
+        <owl:disjointWith rdf:resource="#Vice_President"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Vice_President -->
+
+    <owl:Class rdf:about="#Vice_President">
+        <rdfs:subClassOf rdf:resource="#Employee"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#AndroidApplication -->
+
+    <Technical rdf:about="#AndroidApplication">
+        <rdf:type rdf:resource="#External"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Technical>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#CommunityService -->
+
+    <owl:Thing rdf:about="#CommunityService">
+        <rdf:type rdf:resource="#External"/>
+        <rdf:type rdf:resource="#Non_Technical"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Finance -->
+
+    <Department rdf:about="#Finance">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Department>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#HadoopCutomerFeedback -->
+
+    <Internal rdf:about="#HadoopCutomerFeedback">
+        <rdf:type rdf:resource="#Technical"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Internal>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#IT -->
+
+    <owl:Thing rdf:about="#IT">
+        <rdf:type rdf:resource="#Department"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#IntranetWebsite -->
+
+    <Internal rdf:about="#IntranetWebsite">
+        <rdf:type rdf:resource="#Technical"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Internal>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#MarketSurvey -->
+
+    <Internal rdf:about="#MarketSurvey">
+        <rdf:type rdf:resource="#Non_Technical"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Internal>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Marketing -->
+
+    <Department rdf:about="#Marketing">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Department>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#Product_Development -->
+
+    <Department rdf:about="#Product_Development">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Department>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#RANDD -->
+
+    <owl:Thing rdf:about="#RANDD">
+        <rdf:type rdf:resource="#Department"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#SAPApplication -->
+
+    <Technical rdf:about="#SAPApplication">
+        <rdf:type rdf:resource="#External"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Technical>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#ac_Rachana -->
+
+    <Architect rdf:about="#ac_Rachana">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Architect>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#ac_Raj -->
+
+    <Architect rdf:about="#ac_Raj">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Architect>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#ac_Ram -->
+
+    <Architect rdf:about="#ac_Ram">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Architect>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#ceo_Racheal -->
+
+    <CEO rdf:about="#ceo_Racheal">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <CEO_Of rdf:resource="#pres_Akshay"/>
+        <CEO_Of rdf:resource="#pres_Bella"/>
+        <CEO_Of rdf:resource="#pres_Mia"/>
+    </CEO>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#dev_Chris -->
+
+    <owl:Thing rdf:about="#dev_Chris">
+        <rdf:type rdf:resource="#Developer"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#dev_Emily -->
+
+    <Developer rdf:about="#dev_Emily">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Developer>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#dev_Emma -->
+
+    <owl:Thing rdf:about="#dev_Emma">
+        <rdf:type rdf:resource="#Developer"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#dev_Kenny -->
+
+    <Developer rdf:about="#dev_Kenny">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Developer>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#dev_Leo -->
+
+    <owl:Thing rdf:about="#dev_Leo">
+        <rdf:type rdf:resource="#Developer"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#dir_Ashley -->
+
+    <owl:Thing rdf:about="#dir_Ashley">
+        <rdf:type rdf:resource="#Director"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#dir_Kennith -->
+
+    <Director rdf:about="#dir_Kennith">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Director>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#dir_Olivia -->
+
+    <owl:Thing rdf:about="#dir_Olivia">
+        <rdf:type rdf:resource="#Director"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#hr_Allison -->
+
+    <HR rdf:about="#hr_Allison">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </HR>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#hr_Angela -->
+
+    <HR rdf:about="#hr_Angela">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </HR>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#hr_Dana -->
+
+    <HR rdf:about="#hr_Dana">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </HR>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#hr_Tanya -->
+
+    <owl:Thing rdf:about="#hr_Tanya">
+        <rdf:type rdf:resource="#HR"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#pm_Lauren -->
+
+    <owl:Thing rdf:about="#pm_Lauren">
+        <rdf:type rdf:resource="#Project_Manager"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#pm_Lilly -->
+
+    <Project_Manager rdf:about="#pm_Lilly">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Project_Manager>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#pm_Sophia -->
+
+    <owl:Thing rdf:about="#pm_Sophia">
+        <rdf:type rdf:resource="#Project_Manager"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#pres_Akshay -->
+
+    <owl:Thing rdf:about="#pres_Akshay">
+        <rdf:type rdf:resource="#President"/>
+        <Has_CEO rdf:resource="#ceo_Racheal"/>
+        <President_Of rdf:resource="#vp_Richard"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#pres_Bella -->
+
+    <President rdf:about="#pres_Bella">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <Has_CEO rdf:resource="#ceo_Racheal"/>
+        <President_Of rdf:resource="#vp_Robert"/>
+    </President>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#pres_Mia -->
+
+    <owl:Thing rdf:about="#pres_Mia">
+        <rdf:type rdf:resource="#President"/>
+        <Has_CEO rdf:resource="#ceo_Racheal"/>
+        <President_Of rdf:resource="#vp_Sean"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#rm_Jasmine -->
+
+    <owl:Thing rdf:about="#rm_Jasmine">
+        <rdf:type rdf:resource="#Resourse_Manager"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#rm_Kera -->
+
+    <owl:Thing rdf:about="#rm_Kera">
+        <rdf:type rdf:resource="#Resourse_Manager"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#rm_Maya -->
+
+    <Resourse_Manager rdf:about="#rm_Maya">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Resourse_Manager>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#rm_Sara -->
+
+    <owl:Thing rdf:about="#rm_Sara">
+        <rdf:type rdf:resource="#Resourse_Manager"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#se_Erika -->
+
+    <Systems_Engineer rdf:about="#se_Erika">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Systems_Engineer>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#se_Lucy -->
+
+    <Systems_Engineer rdf:about="#se_Lucy">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Systems_Engineer>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#se_Nadia -->
+
+    <Systems_Engineer rdf:about="#se_Nadia">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Systems_Engineer>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#se_Rajath -->
+
+    <owl:Thing rdf:about="#se_Rajath">
+        <rdf:type rdf:resource="#Systems_Engineer"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#te_Lee -->
+
+    <Tester rdf:about="#te_Lee">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Tester>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#te_Nancy -->
+
+    <Tester rdf:about="#te_Nancy">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Tester>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#te_Ruby -->
+
+    <Tester rdf:about="#te_Ruby">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Tester>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#tl_Daisy -->
+
+    <Team_Lead rdf:about="#tl_Daisy">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Team_Lead>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#tl_Kate -->
+
+    <Team_Lead rdf:about="#tl_Kate">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Team_Lead>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#tl_Summer -->
+
+    <owl:Thing rdf:about="#tl_Summer">
+        <rdf:type rdf:resource="#Team_Lead"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#vp_Jacob -->
+
+    <owl:Thing rdf:about="#vp_Jacob">
+        <rdf:type rdf:resource="#Vice_President"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#vp_Richard -->
+
+    <owl:Thing rdf:about="#vp_Richard">
+        <rdf:type rdf:resource="#Vice_President"/>
+        <Has_President rdf:resource="#pres_Akshay"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#vp_Robert -->
+
+    <Vice_President rdf:about="#vp_Robert">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <Has_President rdf:resource="#pres_Bella"/>
+    </Vice_President>
+    
+
+
+    <!-- http://www.semanticweb.org/sonalisa/ontologies/2013/2/untitled-ontology-3#vp_Sean -->
+
+    <Vice_President rdf:about="#vp_Sean">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <Has_President rdf:resource="#pres_Mia"/>
+    </Vice_President>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="#CEO"/>
+            <rdf:Description rdf:about="#Developer"/>
+            <rdf:Description rdf:about="#Director"/>
+            <rdf:Description rdf:about="#President"/>
+            <rdf:Description rdf:about="#Vice_President"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+
